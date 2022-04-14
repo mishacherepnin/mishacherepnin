@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9d63c1964c444a6b9ef9a172d469fcb1" Name="Diagram1">
+        <EntityTypeShape EntityType="user128_dbModel.Deti_sotrudnika" Width="1.5" PointX="9.75" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="user128_dbModel.Doljnost" Width="1.5" PointX="7.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="user128_dbModel.Family" Width="1.5" PointX="16.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="user128_dbModel.group" Width="1.5" PointX="3" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="user128_dbModel.Obrazovanie" Width="1.5" PointX="16.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="user128_dbModel.Otdel" Width="1.5" PointX="16.75" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="user128_dbModel.otdelenie" Width="1.5" PointX="0.75" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="user128_dbModel.parentsstudentov" Width="1.5" PointX="7.5" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="user128_dbModel.Sotrudnik" Width="1.5" PointX="16.75" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="user128_dbModel.status_group" Width="1.5" PointX="0.75" PointY="19.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="user128_dbModel.Status_sotrudnika" Width="1.5" PointX="18.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="user128_dbModel.students" Width="1.5" PointX="5.25" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="user128_dbModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="user128_dbModel.Table_1" Width="1.5" PointX="18.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="user128_dbModel.База_данных_трудовых_книг" Width="1.5" PointX="7.25" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="user128_dbModel.Бухгалтер" Width="1.5" PointX="11.75" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="user128_dbModel.Владелец_трудовой_книги" Width="1.5" PointX="2.75" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="user128_dbModel.Врач" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="user128_dbModel.Данные" Width="1.5" PointX="7.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="user128_dbModel.Завод" Width="1.5" PointX="14" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="user128_dbModel.Заказ" Width="1.5" PointX="16.25" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="user128_dbModel.Заказ__20_09_" Width="1.5" PointX="12" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="user128_dbModel.Кабинет" Width="1.5" PointX="0.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="user128_dbModel.Категория" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="user128_dbModel.Клиент" Width="1.5" PointX="10" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="user128_dbModel.Клиент__20_09_" Width="1.5" PointX="9.75" PointY="20.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="user128_dbModel.Магазин" Width="1.5" PointX="14" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="user128_dbModel.Полиграфия__20_09_" Width="1.5" PointX="14.25" PointY="20.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="user128_dbModel.Предметы" Width="1.5" PointX="4.75" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="user128_dbModel.Работник" Width="1.5" PointX="11.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="user128_dbModel.Расписание" Width="1.5" PointX="5.25" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="user128_dbModel.Сейф" Width="1.5" PointX="7.25" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="user128_dbModel.Склад" Width="1.5" PointX="14" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="user128_dbModel.Сотрудник" Width="1.5" PointX="10" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="user128_dbModel.Сотрудник__20_09_" Width="1.5" PointX="12.75" PointY="24.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="user128_dbModel.Специальность" Width="1.5" PointX="0.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="user128_dbModel.Срок_заключения_страховки" Width="1.5" PointX="14.5" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="user128_dbModel.Страховка" Width="1.5" PointX="12.25" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="user128_dbModel.Студенты" Width="1.5" PointX="18.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="user128_dbModel.Тип_страховки" Width="1.5" PointX="14.5" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="user128_dbModel.Трудовая_книжка" Width="1.5" PointX="5" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="user128_dbModel.Упрвляющий_баз_данных" Width="1.5" PointX="9.5" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="user128_dbModel.Участок" Width="1.5" PointX="5.25" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="user128_dbModel.Фирма__20_09_" Width="1.5" PointX="15" PointY="23.25" IsExpanded="true" />
+        <AssociationConnector Association="user128_dbModel.FK_group_otdelenie" ManuallyRouted="false" />
+        <AssociationConnector Association="user128_dbModel.FK_group_status_group1" ManuallyRouted="false" />
+        <AssociationConnector Association="user128_dbModel.FK_students_group" ManuallyRouted="false" />
+        <AssociationConnector Association="user128_dbModel.FK_parentsstudentov_students" ManuallyRouted="false" />
+        <AssociationConnector Association="user128_dbModel.FK_База_данных_трудовых_книг_Трудовая_книжка" ManuallyRouted="false" />
+        <AssociationConnector Association="user128_dbModel.FK_Упрвляющий_баз_данных_База_данных_трудовых_книг" ManuallyRouted="false" />
+        <AssociationConnector Association="user128_dbModel.FK_Магазин_Бухгалтер" ManuallyRouted="false" />
+        <AssociationConnector Association="user128_dbModel.FK_Трудовая_книжка_Владелец_трудовой_книги" ManuallyRouted="false" />
+        <AssociationConnector Association="user128_dbModel.FK_Врач_Кабинет" ManuallyRouted="false" />
+        <AssociationConnector Association="user128_dbModel.FK_Врач_Категория" ManuallyRouted="false" />
+        <AssociationConnector Association="user128_dbModel.FK_Врач_Специальность" ManuallyRouted="false" />
+        <AssociationConnector Association="user128_dbModel.FK_Расписание_Врач" ManuallyRouted="false" />
+        <AssociationConnector Association="user128_dbModel.FK_Участок_Врач" ManuallyRouted="false" />
+        <AssociationConnector Association="user128_dbModel.FK_Клиент_Данные" ManuallyRouted="false" />
+        <AssociationConnector Association="user128_dbModel.FK_Завод_Работник" ManuallyRouted="false" />
+        <AssociationConnector Association="user128_dbModel.FK_Заказ_Завод" ManuallyRouted="false" />
+        <AssociationConnector Association="user128_dbModel.FK_Заказ_Магазин" ManuallyRouted="false" />
+        <AssociationConnector Association="user128_dbModel.FK_Заказ_Склад" ManuallyRouted="false" />
+        <AssociationConnector Association="user128_dbModel.FK_Заказ__20_09__Клиент__20_09_" ManuallyRouted="false" />
+        <AssociationConnector Association="user128_dbModel.FK_Полиграфия__20_09__Заказ__20_09_" ManuallyRouted="false" />
+        <AssociationConnector Association="user128_dbModel.FK_Страховка_Клиент" ManuallyRouted="false" />
+        <AssociationConnector Association="user128_dbModel.FK_Фирма__20_09__Клиент__20_09_" ManuallyRouted="false" />
+        <AssociationConnector Association="user128_dbModel.FK_Сейф_Трудовая_книжка" ManuallyRouted="false" />
+        <AssociationConnector Association="user128_dbModel.FK_Страховка_Сотрудник" ManuallyRouted="false" />
+        <AssociationConnector Association="user128_dbModel.FK_Фирма__20_09__Сотрудник__20_09_" ManuallyRouted="false" />
+        <AssociationConnector Association="user128_dbModel.FK_Срок_заключения_страховки_Страховка" ManuallyRouted="false" />
+        <AssociationConnector Association="user128_dbModel.FK_Тип_страховки_Страховка" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

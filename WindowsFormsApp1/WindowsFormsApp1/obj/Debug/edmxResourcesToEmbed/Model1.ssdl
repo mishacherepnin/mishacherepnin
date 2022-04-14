@@ -1,0 +1,929 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="user128_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Deti_sotrudnika">
+    <Key>
+      <PropertyRef Name="id_deti" />
+    </Key>
+    <Property Name="id_deti" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Surname" Type="nchar" MaxLength="10" />
+    <Property Name="Name" Type="nchar" MaxLength="10" />
+    <Property Name="Middlename" Type="nchar" MaxLength="10" />
+    <Property Name="Birthday" Type="date" />
+  </EntityType>
+  <EntityType Name="Doljnost">
+    <Key>
+      <PropertyRef Name="id_doljnost" />
+    </Key>
+    <Property Name="id_doljnost" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Doljnost" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Family">
+    <Key>
+      <PropertyRef Name="id_family" />
+    </Key>
+    <Property Name="id_family" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_sotrudnika" Type="int" Nullable="false" />
+    <Property Name="id_deti" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="group">
+    <Key>
+      <PropertyRef Name="id_group" />
+    </Key>
+    <Property Name="id_group" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="20" />
+    <Property Name="id_office" Type="int" />
+    <Property Name="status_group" Type="int" />
+    <Property Name="headman" Type="varchar" MaxLength="20" />
+    <Property Name="class_headman" Type="varchar" MaxLength="20" />
+    <Property Name="number_students" Type="int" />
+  </EntityType>
+  <EntityType Name="Obrazovanie">
+    <Key>
+      <PropertyRef Name="id_obrazovanie" />
+    </Key>
+    <Property Name="id_obrazovanie" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nazvanie_obrazovaniya" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Otdel">
+    <Key>
+      <PropertyRef Name="id_otdela" />
+    </Key>
+    <Property Name="id_otdela" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nazvanie_otdela" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="otdelenie">
+    <Key>
+      <PropertyRef Name="id_office" />
+    </Key>
+    <Property Name="id_office" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="20" />
+    <Property Name="headman_office" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="parentsstudentov">
+    <Key>
+      <PropertyRef Name="id_parents" />
+    </Key>
+    <Property Name="lastname" Type="varchar" MaxLength="20" />
+    <Property Name="name" Type="varchar" MaxLength="20" />
+    <Property Name="middlename" Type="varchar" MaxLength="20" />
+    <Property Name="id_studenta" Type="int" />
+    <Property Name="adress" Type="varchar" MaxLength="20" />
+    <Property Name="id_parents" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sotrudnik">
+    <Key>
+      <PropertyRef Name="id_sotrudnika" />
+    </Key>
+    <Property Name="id_sotrudnika" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Surname" Type="nchar" MaxLength="10" />
+    <Property Name="Name" Type="nchar" MaxLength="10" />
+    <Property Name="Middlename" Type="nchar" MaxLength="10" />
+    <Property Name="Gender" Type="nchar" MaxLength="10" />
+    <Property Name="Phone" Type="int" />
+    <Property Name="Adress" Type="nchar" MaxLength="10" />
+    <Property Name="Pasport_data" Type="int" />
+    <Property Name="Birthday" Type="date" />
+    <Property Name="Date_in" Type="date" />
+    <Property Name="id_otdel" Type="int" />
+    <Property Name="id_statusa_obrazovanie" Type="int" />
+    <Property Name="id_deti" Type="int" />
+    <Property Name="id_doljnost" Type="int" />
+  </EntityType>
+  <EntityType Name="status_group">
+    <Key>
+      <PropertyRef Name="status_group" />
+    </Key>
+    <Property Name="status_group" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="status_name" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Status_sotrudnika">
+    <Key>
+      <PropertyRef Name="id_status_sotrudnika" />
+    </Key>
+    <Property Name="id_status_sotrudnika" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nazvanie_statusa" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="students">
+    <Key>
+      <PropertyRef Name="id_studenta" />
+    </Key>
+    <Property Name="lastname" Type="varchar" MaxLength="20" />
+    <Property Name="name" Type="varchar" MaxLength="20" />
+    <Property Name="middlename" Type="varchar" MaxLength="20" />
+    <Property Name="date_birthday" Type="date" />
+    <Property Name="pasport" Type="int" />
+    <Property Name="phone_number" Type="int" />
+    <Property Name="gender" Type="varchar" MaxLength="20" />
+    <Property Name="id_group" Type="int" />
+    <Property Name="enrollment" Type="date" />
+    <Property Name="dropout" Type="date" />
+    <Property Name="id_studenta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Table_1">
+    <Key>
+      <PropertyRef Name="Код_предмета" />
+    </Key>
+    <Property Name="Код_предмета" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Название" Type="nchar" MaxLength="20" />
+    <Property Name="Преподователь" Type="nchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="База_данных_трудовых_книг">
+    <Key>
+      <PropertyRef Name="id_база_данных_трудовых_книг" />
+    </Key>
+    <Property Name="id_база_данных_трудовых_книг" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="количество_книжек" Type="int" />
+    <Property Name="дата_поступления_книжки" Type="date" />
+    <Property Name="дата_выдачи_книги" Type="date" />
+    <Property Name="id_трудовая_книга" Type="int" />
+  </EntityType>
+  <EntityType Name="Бухгалтер">
+    <Key>
+      <PropertyRef Name="id_бухгалтер" />
+    </Key>
+    <Property Name="id_бухгалтер" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="имя" Type="nchar" MaxLength="10" />
+    <Property Name="фамилия" Type="nchar" MaxLength="10" />
+    <Property Name="зарплата" Type="smallmoney" />
+    <Property Name="номер_телефона" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Владелец_трудовой_книги">
+    <Key>
+      <PropertyRef Name="id_владелец_трудовой_книги" />
+    </Key>
+    <Property Name="id_владелец_трудовой_книги" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="имя" Type="nchar" MaxLength="25" />
+    <Property Name="фамилия" Type="nchar" MaxLength="25" />
+    <Property Name="номер" Type="nchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="Врач">
+    <Key>
+      <PropertyRef Name="id_врач" />
+    </Key>
+    <Property Name="id_врач" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="фамилия_врач" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="имя_врач" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="отчество_врач" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="возраст" Type="int" />
+    <Property Name="паспортые_данные" Type="int" />
+    <Property Name="id_категория" Type="int" />
+    <Property Name="id_кабинет" Type="int" />
+    <Property Name="id_специальность" Type="int" />
+  </EntityType>
+  <EntityType Name="Данные">
+    <Key>
+      <PropertyRef Name="id_клиент" />
+    </Key>
+    <Property Name="id_клиент" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="серия" Type="int" />
+    <Property Name="номер" Type="int" />
+    <Property Name="кем_выдан" Type="nchar" MaxLength="35" />
+    <Property Name="адресс" Type="nchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="Завод">
+    <Key>
+      <PropertyRef Name="id_завод" />
+    </Key>
+    <Property Name="id_завод" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="название" Type="nchar" MaxLength="50" />
+    <Property Name="адрес" Type="nchar" MaxLength="50" />
+    <Property Name="корпус" Type="int" />
+    <Property Name="id_работник" Type="int" />
+  </EntityType>
+  <EntityType Name="Заказ">
+    <Key>
+      <PropertyRef Name="id_заказ" />
+    </Key>
+    <Property Name="id_заказ" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="номер_заказа" Type="int" />
+    <Property Name="цена" Type="smallmoney" />
+    <Property Name="дата_заказа" Type="date" />
+    <Property Name="id_склад" Type="int" />
+    <Property Name="id_завод" Type="int" />
+    <Property Name="id_магазин" Type="int" />
+  </EntityType>
+  <EntityType Name="Заказ (20_09)">
+    <Key>
+      <PropertyRef Name="id_заказа" />
+    </Key>
+    <Property Name="id_заказа" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Название" Type="nchar" MaxLength="15" />
+    <Property Name="Цена" Type="smallmoney" />
+    <Property Name="id_клиента" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Кабинет">
+    <Key>
+      <PropertyRef Name="id_кабинет" />
+    </Key>
+    <Property Name="id_кабинет" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="номер_кабинета" Type="int" />
+    <Property Name="кол-во_врачей" Type="int" />
+  </EntityType>
+  <EntityType Name="Категория">
+    <Key>
+      <PropertyRef Name="id_категория" />
+    </Key>
+    <Property Name="id_категория" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="название_категория" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Клиент">
+    <Key>
+      <PropertyRef Name="id_клиент" />
+    </Key>
+    <Property Name="id_клиент" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="фамилия" Type="nchar" MaxLength="10" />
+    <Property Name="имя" Type="nchar" MaxLength="10" />
+    <Property Name="отчество" Type="nchar" MaxLength="10" />
+    <Property Name="номер_телефона" Type="int" />
+  </EntityType>
+  <EntityType Name="Клиент (20_09)">
+    <Key>
+      <PropertyRef Name="id_клиента" />
+    </Key>
+    <Property Name="id_клиента" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Имя" Type="nchar" MaxLength="15" />
+    <Property Name="Фамилия" Type="nchar" MaxLength="15" />
+    <Property Name="Номер_телефона" Type="int" />
+    <Property Name="Почта_клиента" Type="nchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="Магазин">
+    <Key>
+      <PropertyRef Name="id_магазин" />
+    </Key>
+    <Property Name="id_магазин" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="название" Type="nchar" MaxLength="50" />
+    <Property Name="адрес" Type="nchar" MaxLength="50" />
+    <Property Name="владелец" Type="nchar" MaxLength="50" />
+    <Property Name="id_бухгалтер" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'user128_db.dbo.Оценки' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Оценки">
+          <Property Name="Код_студента" Type="int" />
+          <Property Name="Код_предмета" Type="int" />
+          <Property Name="Оценка" Type="int" />
+        </EntityType>-->
+  <EntityType Name="Полиграфия (20_09)">
+    <Key>
+      <PropertyRef Name="id_полиграфии" />
+    </Key>
+    <Property Name="id_полиграфии" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Название_полиграфии" Type="nchar" MaxLength="15" />
+    <Property Name="Цена" Type="smallmoney" />
+    <Property Name="id_заказа" Type="int" />
+  </EntityType>
+  <EntityType Name="Предметы">
+    <Key>
+      <PropertyRef Name="Код_предмета" />
+    </Key>
+    <Property Name="Код_предмета" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Название" Type="varchar" MaxLength="50" />
+    <Property Name="Преподователь" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Работник">
+    <Key>
+      <PropertyRef Name="id_работник" />
+    </Key>
+    <Property Name="id_работник" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="имя" Type="nchar" MaxLength="50" />
+    <Property Name="фамилия" Type="nchar" MaxLength="50" />
+    <Property Name="профессия" Type="nchar" MaxLength="50" />
+    <Property Name="зарплата" Type="smallmoney" />
+    <Property Name="номер_телефона" Type="nchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Расписание">
+    <Key>
+      <PropertyRef Name="id_расписание" />
+    </Key>
+    <Property Name="id_расписание" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="начало_работы" Type="time" Precision="7" />
+    <Property Name="конец_работы" Type="time" Precision="7" />
+    <Property Name="день_недели" Type="nchar" MaxLength="20" />
+    <Property Name="id_врач" Type="int" />
+  </EntityType>
+  <EntityType Name="Сейф">
+    <Key>
+      <PropertyRef Name="id_сейф" />
+    </Key>
+    <Property Name="id_сейф" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="номер" Type="int" />
+    <Property Name="id_трудовая_книжка" Type="int" />
+  </EntityType>
+  <EntityType Name="Склад">
+    <Key>
+      <PropertyRef Name="id_склад" />
+    </Key>
+    <Property Name="id_склад" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="название" Type="nchar" MaxLength="50" />
+    <Property Name="адрес" Type="nchar" MaxLength="50" />
+    <Property Name="продукция" Type="nchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Сотрудник">
+    <Key>
+      <PropertyRef Name="id_сотрудника" />
+    </Key>
+    <Property Name="id_сотрудника" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="фамилия" Type="nchar" MaxLength="20" />
+    <Property Name="имя" Type="nchar" MaxLength="20" />
+    <Property Name="отчество" Type="nchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Сотрудник (20_09)">
+    <Key>
+      <PropertyRef Name="id_сотрудника" />
+    </Key>
+    <Property Name="id_сотрудника" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Имя" Type="nchar" MaxLength="15" />
+    <Property Name="Фамилия" Type="nchar" MaxLength="15" />
+    <Property Name="Номер_телефона" Type="int" />
+    <Property Name="Вид_работы" Type="nchar" MaxLength="20" />
+    <Property Name="Зарплата" Type="smallmoney" />
+  </EntityType>
+  <EntityType Name="Специальность">
+    <Key>
+      <PropertyRef Name="id_специальность" />
+    </Key>
+    <Property Name="id_специальность" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="название_специальности" Type="nchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Срок_заключения_страховки">
+    <Key>
+      <PropertyRef Name="id_страховка" />
+    </Key>
+    <Property Name="id_страховка" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="начало_действия" Type="date" />
+    <Property Name="окончание_действия" Type="date" />
+  </EntityType>
+  <EntityType Name="Страховка">
+    <Key>
+      <PropertyRef Name="id_страховка" />
+    </Key>
+    <Property Name="id_страховка" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_клиент" Type="int" />
+    <Property Name="id_сотрудник" Type="int" />
+    <Property Name="стоимость_страховки" Type="smallmoney" />
+    <Property Name="серия_номер_страховки" Type="int" />
+    <Property Name="первоначальный_взнос" Type="int" />
+  </EntityType>
+  <EntityType Name="Студенты">
+    <Key>
+      <PropertyRef Name="Код_студента" />
+    </Key>
+    <Property Name="Код_студента" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Фамилия" Type="nchar" MaxLength="10" />
+    <Property Name="Имя" Type="nchar" MaxLength="20" />
+    <Property Name="Дата" Type="date" />
+    <Property Name="Пол" Type="nchar" MaxLength="1" />
+    <Property Name="Улица" Type="nchar" MaxLength="20" />
+    <Property Name="Дом" Type="int" />
+    <Property Name="Квартира" Type="int" />
+    <Property Name="Группа_здоровья" Type="nchar" MaxLength="25" />
+    <Property Name="Увлечения" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Курс" Type="int" />
+    <Property Name="Телефон" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Тип_страховки">
+    <Key>
+      <PropertyRef Name="id_страховка" />
+    </Key>
+    <Property Name="id_страховка" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="вид_страховки" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Трудовая_книжка">
+    <Key>
+      <PropertyRef Name="id_трудовая_книга" />
+    </Key>
+    <Property Name="id_трудовая_книга" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="номер" Type="nchar" MaxLength="50" />
+    <Property Name="работа" Type="nchar" MaxLength="50" />
+    <Property Name="дата_зачисления" Type="date" />
+    <Property Name="дата_увольнения" Type="date" />
+    <Property Name="электронная_подпись" Type="nchar" MaxLength="50" />
+    <Property Name="id_владелец_трудовой_книги" Type="int" />
+  </EntityType>
+  <EntityType Name="Упрвляющий_баз_данных">
+    <Key>
+      <PropertyRef Name="id_управляющий" />
+    </Key>
+    <Property Name="id_управляющий" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="имя" Type="nchar" MaxLength="25" />
+    <Property Name="фамилия" Type="nchar" MaxLength="25" />
+    <Property Name="почта" Type="nchar" MaxLength="25" />
+    <Property Name="номер" Type="nchar" MaxLength="25" />
+    <Property Name="id_база_данных_трудовых_книг" Type="int" />
+  </EntityType>
+  <EntityType Name="Участок">
+    <Key>
+      <PropertyRef Name="id_участок" />
+    </Key>
+    <Property Name="id_участок" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_врач" Type="int" />
+    <Property Name="название_участка" Type="nchar" MaxLength="20" />
+    <Property Name="адрес_участка" Type="nchar" MaxLength="20" />
+    <Property Name="число_жителей" Type="int" />
+  </EntityType>
+  <EntityType Name="Фирма (20_09)">
+    <Key>
+      <PropertyRef Name="id_фирмы" />
+    </Key>
+    <Property Name="id_фирмы" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Название" Type="nchar" MaxLength="15" />
+    <Property Name="Почта_фирмы" Type="nchar" MaxLength="25" />
+    <Property Name="Адрес" Type="nchar" MaxLength="25" />
+    <Property Name="id_сотрудника" Type="int" />
+    <Property Name="id_клиента" Type="int" />
+  </EntityType>
+  <Association Name="FK_group_otdelenie">
+    <End Role="otdelenie" Type="Self.otdelenie" Multiplicity="0..1" />
+    <End Role="group" Type="Self.group" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="otdelenie">
+        <PropertyRef Name="id_office" />
+      </Principal>
+      <Dependent Role="group">
+        <PropertyRef Name="id_office" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_group_status_group1">
+    <End Role="status_group" Type="Self.status_group" Multiplicity="0..1" />
+    <End Role="group" Type="Self.group" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="status_group">
+        <PropertyRef Name="status_group" />
+      </Principal>
+      <Dependent Role="group">
+        <PropertyRef Name="status_group" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_parentsstudentov_students">
+    <End Role="students" Type="Self.students" Multiplicity="0..1" />
+    <End Role="parentsstudentov" Type="Self.parentsstudentov" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="students">
+        <PropertyRef Name="id_studenta" />
+      </Principal>
+      <Dependent Role="parentsstudentov">
+        <PropertyRef Name="id_studenta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_students_group">
+    <End Role="group" Type="Self.group" Multiplicity="0..1" />
+    <End Role="students" Type="Self.students" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="group">
+        <PropertyRef Name="id_group" />
+      </Principal>
+      <Dependent Role="students">
+        <PropertyRef Name="id_group" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_База_данных_трудовых_книг_Трудовая_книжка">
+    <End Role="Трудовая_книжка" Type="Self.Трудовая_книжка" Multiplicity="0..1" />
+    <End Role="База_данных_трудовых_книг" Type="Self.База_данных_трудовых_книг" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Трудовая_книжка">
+        <PropertyRef Name="id_трудовая_книга" />
+      </Principal>
+      <Dependent Role="База_данных_трудовых_книг">
+        <PropertyRef Name="id_трудовая_книга" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Врач_Кабинет">
+    <End Role="Кабинет" Type="Self.Кабинет" Multiplicity="0..1" />
+    <End Role="Врач" Type="Self.Врач" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Кабинет">
+        <PropertyRef Name="id_кабинет" />
+      </Principal>
+      <Dependent Role="Врач">
+        <PropertyRef Name="id_кабинет" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Врач_Категория">
+    <End Role="Категория" Type="Self.Категория" Multiplicity="0..1" />
+    <End Role="Врач" Type="Self.Врач" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Категория">
+        <PropertyRef Name="id_категория" />
+      </Principal>
+      <Dependent Role="Врач">
+        <PropertyRef Name="id_категория" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Врач_Специальность">
+    <End Role="Специальность" Type="Self.Специальность" Multiplicity="0..1" />
+    <End Role="Врач" Type="Self.Врач" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Специальность">
+        <PropertyRef Name="id_специальность" />
+      </Principal>
+      <Dependent Role="Врач">
+        <PropertyRef Name="id_специальность" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Завод_Работник">
+    <End Role="Работник" Type="Self.Работник" Multiplicity="0..1" />
+    <End Role="Завод" Type="Self.Завод" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Работник">
+        <PropertyRef Name="id_работник" />
+      </Principal>
+      <Dependent Role="Завод">
+        <PropertyRef Name="id_работник" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Заказ (20_09)_Клиент (20_09)">
+    <End Role="Клиент (20_09)" Type="Self.Клиент (20_09)" Multiplicity="1" />
+    <End Role="Заказ (20_09)" Type="Self.Заказ (20_09)" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Клиент (20_09)">
+        <PropertyRef Name="id_клиента" />
+      </Principal>
+      <Dependent Role="Заказ (20_09)">
+        <PropertyRef Name="id_клиента" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Заказ_Завод">
+    <End Role="Завод" Type="Self.Завод" Multiplicity="0..1" />
+    <End Role="Заказ" Type="Self.Заказ" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Завод">
+        <PropertyRef Name="id_завод" />
+      </Principal>
+      <Dependent Role="Заказ">
+        <PropertyRef Name="id_завод" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Заказ_Магазин">
+    <End Role="Магазин" Type="Self.Магазин" Multiplicity="0..1" />
+    <End Role="Заказ" Type="Self.Заказ" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Магазин">
+        <PropertyRef Name="id_магазин" />
+      </Principal>
+      <Dependent Role="Заказ">
+        <PropertyRef Name="id_магазин" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Заказ_Склад">
+    <End Role="Склад" Type="Self.Склад" Multiplicity="0..1" />
+    <End Role="Заказ" Type="Self.Заказ" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Склад">
+        <PropertyRef Name="id_склад" />
+      </Principal>
+      <Dependent Role="Заказ">
+        <PropertyRef Name="id_склад" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Клиент_Данные">
+    <End Role="Данные" Type="Self.Данные" Multiplicity="1" />
+    <End Role="Клиент" Type="Self.Клиент" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Данные">
+        <PropertyRef Name="id_клиент" />
+      </Principal>
+      <Dependent Role="Клиент">
+        <PropertyRef Name="id_клиент" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Магазин_Бухгалтер">
+    <End Role="Бухгалтер" Type="Self.Бухгалтер" Multiplicity="0..1" />
+    <End Role="Магазин" Type="Self.Магазин" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Бухгалтер">
+        <PropertyRef Name="id_бухгалтер" />
+      </Principal>
+      <Dependent Role="Магазин">
+        <PropertyRef Name="id_бухгалтер" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <!--Errors Found During Generation:
+error 6004: The table 'user128_db.dbo.Оценки' is referenced by a relationship, but cannot be found.
+        <Association Name="FK_Оценки_Предметы" />-->
+  <!--Errors Found During Generation:
+error 6004: The table 'user128_db.dbo.Оценки' is referenced by a relationship, but cannot be found.
+        <Association Name="FK_Оценки_Студенты" />-->
+  <Association Name="FK_Полиграфия (20_09)_Заказ (20_09)">
+    <End Role="Заказ (20_09)" Type="Self.Заказ (20_09)" Multiplicity="0..1" />
+    <End Role="Полиграфия (20_09)" Type="Self.Полиграфия (20_09)" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Заказ (20_09)">
+        <PropertyRef Name="id_заказа" />
+      </Principal>
+      <Dependent Role="Полиграфия (20_09)">
+        <PropertyRef Name="id_заказа" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Расписание_Врач">
+    <End Role="Врач" Type="Self.Врач" Multiplicity="0..1" />
+    <End Role="Расписание" Type="Self.Расписание" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Врач">
+        <PropertyRef Name="id_врач" />
+      </Principal>
+      <Dependent Role="Расписание">
+        <PropertyRef Name="id_врач" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Сейф_Трудовая_книжка">
+    <End Role="Трудовая_книжка" Type="Self.Трудовая_книжка" Multiplicity="0..1" />
+    <End Role="Сейф" Type="Self.Сейф" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Трудовая_книжка">
+        <PropertyRef Name="id_трудовая_книга" />
+      </Principal>
+      <Dependent Role="Сейф">
+        <PropertyRef Name="id_трудовая_книжка" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Срок_заключения_страховки_Страховка">
+    <End Role="Страховка" Type="Self.Страховка" Multiplicity="1" />
+    <End Role="Срок_заключения_страховки" Type="Self.Срок_заключения_страховки" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Страховка">
+        <PropertyRef Name="id_страховка" />
+      </Principal>
+      <Dependent Role="Срок_заключения_страховки">
+        <PropertyRef Name="id_страховка" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Страховка_Клиент">
+    <End Role="Клиент" Type="Self.Клиент" Multiplicity="0..1" />
+    <End Role="Страховка" Type="Self.Страховка" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Клиент">
+        <PropertyRef Name="id_клиент" />
+      </Principal>
+      <Dependent Role="Страховка">
+        <PropertyRef Name="id_клиент" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Страховка_Сотрудник">
+    <End Role="Сотрудник" Type="Self.Сотрудник" Multiplicity="0..1" />
+    <End Role="Страховка" Type="Self.Страховка" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Сотрудник">
+        <PropertyRef Name="id_сотрудника" />
+      </Principal>
+      <Dependent Role="Страховка">
+        <PropertyRef Name="id_сотрудник" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Тип_страховки_Страховка">
+    <End Role="Страховка" Type="Self.Страховка" Multiplicity="1" />
+    <End Role="Тип_страховки" Type="Self.Тип_страховки" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Страховка">
+        <PropertyRef Name="id_страховка" />
+      </Principal>
+      <Dependent Role="Тип_страховки">
+        <PropertyRef Name="id_страховка" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Трудовая_книжка_Владелец_трудовой_книги">
+    <End Role="Владелец_трудовой_книги" Type="Self.Владелец_трудовой_книги" Multiplicity="0..1" />
+    <End Role="Трудовая_книжка" Type="Self.Трудовая_книжка" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Владелец_трудовой_книги">
+        <PropertyRef Name="id_владелец_трудовой_книги" />
+      </Principal>
+      <Dependent Role="Трудовая_книжка">
+        <PropertyRef Name="id_владелец_трудовой_книги" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Упрвляющий_баз_данных_База_данных_трудовых_книг">
+    <End Role="База_данных_трудовых_книг" Type="Self.База_данных_трудовых_книг" Multiplicity="0..1" />
+    <End Role="Упрвляющий_баз_данных" Type="Self.Упрвляющий_баз_данных" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="База_данных_трудовых_книг">
+        <PropertyRef Name="id_база_данных_трудовых_книг" />
+      </Principal>
+      <Dependent Role="Упрвляющий_баз_данных">
+        <PropertyRef Name="id_база_данных_трудовых_книг" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Участок_Врач">
+    <End Role="Врач" Type="Self.Врач" Multiplicity="0..1" />
+    <End Role="Участок" Type="Self.Участок" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Врач">
+        <PropertyRef Name="id_врач" />
+      </Principal>
+      <Dependent Role="Участок">
+        <PropertyRef Name="id_врач" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Фирма (20_09)_Клиент (20_09)">
+    <End Role="Клиент (20_09)" Type="Self.Клиент (20_09)" Multiplicity="0..1" />
+    <End Role="Фирма (20_09)" Type="Self.Фирма (20_09)" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Клиент (20_09)">
+        <PropertyRef Name="id_клиента" />
+      </Principal>
+      <Dependent Role="Фирма (20_09)">
+        <PropertyRef Name="id_клиента" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Фирма (20_09)_Сотрудник (20_09)">
+    <End Role="Сотрудник (20_09)" Type="Self.Сотрудник (20_09)" Multiplicity="0..1" />
+    <End Role="Фирма (20_09)" Type="Self.Фирма (20_09)" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Сотрудник (20_09)">
+        <PropertyRef Name="id_сотрудника" />
+      </Principal>
+      <Dependent Role="Фирма (20_09)">
+        <PropertyRef Name="id_сотрудника" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="user128_dbModelStoreContainer">
+    <EntitySet Name="Deti_sotrudnika" EntityType="Self.Deti_sotrudnika" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Doljnost" EntityType="Self.Doljnost" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Family" EntityType="Self.Family" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="group" EntityType="Self.group" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Obrazovanie" EntityType="Self.Obrazovanie" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Otdel" EntityType="Self.Otdel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="otdelenie" EntityType="Self.otdelenie" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="parentsstudentov" EntityType="Self.parentsstudentov" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sotrudnik" EntityType="Self.Sotrudnik" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="status_group" EntityType="Self.status_group" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Status_sotrudnika" EntityType="Self.Status_sotrudnika" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="students" EntityType="Self.students" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_1" EntityType="Self.Table_1" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="База_данных_трудовых_книг" EntityType="Self.База_данных_трудовых_книг" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Бухгалтер" EntityType="Self.Бухгалтер" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Владелец_трудовой_книги" EntityType="Self.Владелец_трудовой_книги" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Врач" EntityType="Self.Врач" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Данные" EntityType="Self.Данные" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Завод" EntityType="Self.Завод" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Заказ" EntityType="Self.Заказ" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Заказ (20_09)" EntityType="Self.Заказ (20_09)" Schema="dbo" Table="Заказ (20.09)" store:Type="Tables" />
+    <EntitySet Name="Кабинет" EntityType="Self.Кабинет" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Категория" EntityType="Self.Категория" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Клиент" EntityType="Self.Клиент" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Клиент (20_09)" EntityType="Self.Клиент (20_09)" Schema="dbo" Table="Клиент (20.09)" store:Type="Tables" />
+    <EntitySet Name="Магазин" EntityType="Self.Магазин" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Полиграфия (20_09)" EntityType="Self.Полиграфия (20_09)" Schema="dbo" Table="Полиграфия (20.09)" store:Type="Tables" />
+    <EntitySet Name="Предметы" EntityType="Self.Предметы" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Работник" EntityType="Self.Работник" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Расписание" EntityType="Self.Расписание" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Сейф" EntityType="Self.Сейф" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Склад" EntityType="Self.Склад" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Сотрудник" EntityType="Self.Сотрудник" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Сотрудник (20_09)" EntityType="Self.Сотрудник (20_09)" Schema="dbo" Table="Сотрудник (20.09)" store:Type="Tables" />
+    <EntitySet Name="Специальность" EntityType="Self.Специальность" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Срок_заключения_страховки" EntityType="Self.Срок_заключения_страховки" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Страховка" EntityType="Self.Страховка" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Студенты" EntityType="Self.Студенты" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Тип_страховки" EntityType="Self.Тип_страховки" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Трудовая_книжка" EntityType="Self.Трудовая_книжка" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Упрвляющий_баз_данных" EntityType="Self.Упрвляющий_баз_данных" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Участок" EntityType="Self.Участок" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Фирма (20_09)" EntityType="Self.Фирма (20_09)" Schema="dbo" Table="Фирма (20.09)" store:Type="Tables" />
+    <AssociationSet Name="FK_group_otdelenie" Association="Self.FK_group_otdelenie">
+      <End Role="otdelenie" EntitySet="otdelenie" />
+      <End Role="group" EntitySet="group" />
+    </AssociationSet>
+    <AssociationSet Name="FK_group_status_group1" Association="Self.FK_group_status_group1">
+      <End Role="status_group" EntitySet="status_group" />
+      <End Role="group" EntitySet="group" />
+    </AssociationSet>
+    <AssociationSet Name="FK_parentsstudentov_students" Association="Self.FK_parentsstudentov_students">
+      <End Role="students" EntitySet="students" />
+      <End Role="parentsstudentov" EntitySet="parentsstudentov" />
+    </AssociationSet>
+    <AssociationSet Name="FK_students_group" Association="Self.FK_students_group">
+      <End Role="group" EntitySet="group" />
+      <End Role="students" EntitySet="students" />
+    </AssociationSet>
+    <AssociationSet Name="FK_База_данных_трудовых_книг_Трудовая_книжка" Association="Self.FK_База_данных_трудовых_книг_Трудовая_книжка">
+      <End Role="Трудовая_книжка" EntitySet="Трудовая_книжка" />
+      <End Role="База_данных_трудовых_книг" EntitySet="База_данных_трудовых_книг" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Врач_Кабинет" Association="Self.FK_Врач_Кабинет">
+      <End Role="Кабинет" EntitySet="Кабинет" />
+      <End Role="Врач" EntitySet="Врач" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Врач_Категория" Association="Self.FK_Врач_Категория">
+      <End Role="Категория" EntitySet="Категория" />
+      <End Role="Врач" EntitySet="Врач" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Врач_Специальность" Association="Self.FK_Врач_Специальность">
+      <End Role="Специальность" EntitySet="Специальность" />
+      <End Role="Врач" EntitySet="Врач" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Завод_Работник" Association="Self.FK_Завод_Работник">
+      <End Role="Работник" EntitySet="Работник" />
+      <End Role="Завод" EntitySet="Завод" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Заказ (20_09)_Клиент (20_09)" Association="Self.FK_Заказ (20_09)_Клиент (20_09)">
+      <End Role="Клиент (20_09)" EntitySet="Клиент (20_09)" />
+      <End Role="Заказ (20_09)" EntitySet="Заказ (20_09)" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Заказ_Завод" Association="Self.FK_Заказ_Завод">
+      <End Role="Завод" EntitySet="Завод" />
+      <End Role="Заказ" EntitySet="Заказ" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Заказ_Магазин" Association="Self.FK_Заказ_Магазин">
+      <End Role="Магазин" EntitySet="Магазин" />
+      <End Role="Заказ" EntitySet="Заказ" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Заказ_Склад" Association="Self.FK_Заказ_Склад">
+      <End Role="Склад" EntitySet="Склад" />
+      <End Role="Заказ" EntitySet="Заказ" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Клиент_Данные" Association="Self.FK_Клиент_Данные">
+      <End Role="Данные" EntitySet="Данные" />
+      <End Role="Клиент" EntitySet="Клиент" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Магазин_Бухгалтер" Association="Self.FK_Магазин_Бухгалтер">
+      <End Role="Бухгалтер" EntitySet="Бухгалтер" />
+      <End Role="Магазин" EntitySet="Магазин" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Полиграфия (20_09)_Заказ (20_09)" Association="Self.FK_Полиграфия (20_09)_Заказ (20_09)">
+      <End Role="Заказ (20_09)" EntitySet="Заказ (20_09)" />
+      <End Role="Полиграфия (20_09)" EntitySet="Полиграфия (20_09)" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Расписание_Врач" Association="Self.FK_Расписание_Врач">
+      <End Role="Врач" EntitySet="Врач" />
+      <End Role="Расписание" EntitySet="Расписание" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Сейф_Трудовая_книжка" Association="Self.FK_Сейф_Трудовая_книжка">
+      <End Role="Трудовая_книжка" EntitySet="Трудовая_книжка" />
+      <End Role="Сейф" EntitySet="Сейф" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Срок_заключения_страховки_Страховка" Association="Self.FK_Срок_заключения_страховки_Страховка">
+      <End Role="Страховка" EntitySet="Страховка" />
+      <End Role="Срок_заключения_страховки" EntitySet="Срок_заключения_страховки" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Страховка_Клиент" Association="Self.FK_Страховка_Клиент">
+      <End Role="Клиент" EntitySet="Клиент" />
+      <End Role="Страховка" EntitySet="Страховка" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Страховка_Сотрудник" Association="Self.FK_Страховка_Сотрудник">
+      <End Role="Сотрудник" EntitySet="Сотрудник" />
+      <End Role="Страховка" EntitySet="Страховка" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Тип_страховки_Страховка" Association="Self.FK_Тип_страховки_Страховка">
+      <End Role="Страховка" EntitySet="Страховка" />
+      <End Role="Тип_страховки" EntitySet="Тип_страховки" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Трудовая_книжка_Владелец_трудовой_книги" Association="Self.FK_Трудовая_книжка_Владелец_трудовой_книги">
+      <End Role="Владелец_трудовой_книги" EntitySet="Владелец_трудовой_книги" />
+      <End Role="Трудовая_книжка" EntitySet="Трудовая_книжка" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Упрвляющий_баз_данных_База_данных_трудовых_книг" Association="Self.FK_Упрвляющий_баз_данных_База_данных_трудовых_книг">
+      <End Role="База_данных_трудовых_книг" EntitySet="База_данных_трудовых_книг" />
+      <End Role="Упрвляющий_баз_данных" EntitySet="Упрвляющий_баз_данных" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Участок_Врач" Association="Self.FK_Участок_Врач">
+      <End Role="Врач" EntitySet="Врач" />
+      <End Role="Участок" EntitySet="Участок" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Фирма (20_09)_Клиент (20_09)" Association="Self.FK_Фирма (20_09)_Клиент (20_09)">
+      <End Role="Клиент (20_09)" EntitySet="Клиент (20_09)" />
+      <End Role="Фирма (20_09)" EntitySet="Фирма (20_09)" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Фирма (20_09)_Сотрудник (20_09)" Association="Self.FK_Фирма (20_09)_Сотрудник (20_09)">
+      <End Role="Сотрудник (20_09)" EntitySet="Сотрудник (20_09)" />
+      <End Role="Фирма (20_09)" EntitySet="Фирма (20_09)" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
